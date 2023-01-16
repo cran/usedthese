@@ -1,0 +1,30 @@
+---
+title: "Site-wide usage"
+description: | 
+  Harvest the summary tables of package & function usage created by used_here() ready for site-wide analysis.
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Site-wide usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(usedthese)
+```
+
+Having added `used_here()` to several of your Quarto website pages, you may want to make an overall site analysis of your package and function usage. `used_there()` scrapes and consolidates the tables into a `tibble` ready for analysis:
+
+```{r}
+
+used_there("https://www.quantumjitter.com/project/")
+```
+
+[Favourite Things](https://www.quantumjitter.com/project/box/) shows an example analysis which takes the tibble output from `used_there()`, augments these data with a category, and plots the most-used packages, the most-used functions and a word cloud.
