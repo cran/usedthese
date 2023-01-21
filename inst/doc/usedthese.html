@@ -568,23 +568,31 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 a Quarto document, add <code>used_here()</code> to the end of the code.
 A separate code chunk with an appropriate heading is suggested but not
 essential.</p>
+<p>The package author recommends using the <a href="https://conflicted.r-lib.org">conflicted package</a> to resolve
+conflicts. In the example below, ‘dplyr’ has been preferred over stats
+for <code>filter()</code> and <code>lag()</code>, and over the xts
+package for <code>first()</code> and <code>last()</code>.</p>
 <div id="some-code" class="section level2">
 <h2>Some code</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tidyverse.quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usedthese)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xts, <span class="at">exclude =</span> <span class="st">&quot;first&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: zoo</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;zoo&#39;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:base&#39;:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     as.Date, as.Date.numeric</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">conflict_prefer_all</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usedthese)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xts)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: zoo</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;zoo&#39;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:base&#39;:</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;xts&#39;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following object is masked from &#39;package:dplyr&#39;:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     last</span></span></code></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     as.Date, as.Date.numeric</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">conflict_scout</span>()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 conflicts:</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; * `filter`: [dplyr]</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; * `first` : [dplyr]</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; * `lag`   : [dplyr]</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; * `last`  : [dplyr]</span></span></code></pre></div>
 </div>
 <div id="more-code" class="section level2">
 <h2>More code</h2>
@@ -606,17 +614,8 @@ essential.</p>
 <h2>Summary of usage</h2>
 <p>In the example below, <code>tribble()</code> is counted once against
 the (originating) tibble package even though it is also loaded by dplyr.
-And <code>used_here()</code> assumes a loaded function is used rather
-than a base function of the same name, so <code>dplyr::filter()</code>,
-for example, is counted rather than <code>stats::filter()</code>.</p>
-<p>Both the dplyr and xts packages have <code>first()</code> and
-<code>last()</code> functions. Because we’ve explicitly excluded
-<code>first()</code> in the library call for xts, the function is
-counted against dplyr. However, as there is no similar exclusion for
-<code>last()</code>, this is shown against both packages as a DUPE; a
-decision needs to be made as to which should be excluded.
-(<code>library()</code> can take an <code>exclude</code> character
-vector or an <code>include.only</code> vector.)</p>
+And had we not used the conflicted package, <code>filter()</code> for
+example would have shown against the package name “dplyr, stats”.</p>
 <p>The rendered table is assigned the CSS class <code>.usedthese</code>
 to help other <code>used_*</code> functions find and aggregate multiple
 tables across one or more websites.</p>
@@ -635,26 +634,18 @@ Function
 <tbody>
 <tr>
 <td style="text-align:left;">
-[DUPE]dplyr
-</td>
-<td style="text-align:left;">
-last[1]
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-[DUPE]xts
-</td>
-<td style="text-align:left;">
-last[1]
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 base
 </td>
 <td style="text-align:left;">
-library[3]; options[1]
+library[4], options[1]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+conflicted
+</td>
+<td style="text-align:left;">
+conflict_prefer_all[1], conflict_scout[1]
 </td>
 </tr>
 <tr>
@@ -662,7 +653,7 @@ library[3]; options[1]
 dplyr
 </td>
 <td style="text-align:left;">
-filter[1]; first[1]; mutate[1]; select[1]
+filter[1], first[1], last[1], mutate[1], select[1]
 </td>
 </tr>
 <tr>

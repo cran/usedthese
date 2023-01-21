@@ -6,9 +6,13 @@ knitr::opts_chunk$set(
 
 ## ----setup--------------------------------------------------------------------
 options(tidyverse.quiet = TRUE)
-library(tidyverse) 
+library(conflicted)
+library(tidyverse)
+conflict_prefer_all("dplyr", quiet = TRUE)
 library(usedthese)
-library(xts, exclude = "first")
+library(xts)
+
+conflict_scout()
 
 ## -----------------------------------------------------------------------------
 tribble(~group, ~a1, ~a2, ~b1,
