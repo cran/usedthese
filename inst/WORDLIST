@@ -2,6 +2,7 @@ CMD
 Codecov
 Lifecycle
 Tidyverse
+tidyverse
 com
 css
 dplyr
@@ -13,3 +14,6 @@ purrr
 quantumjitter
 tibble
 xts
+regex
+tidyr
+fpp

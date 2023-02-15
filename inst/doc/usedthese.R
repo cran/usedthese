@@ -7,10 +7,11 @@ knitr::opts_chunk$set(
 ## ----setup--------------------------------------------------------------------
 options(tidyverse.quiet = TRUE)
 library(conflicted)
-library(tidyverse)
-conflict_prefer_all("dplyr", quiet = TRUE)
+library(dplyr)
+library(tibble)
+conflicts_prefer(dplyr::filter, dplyr::last)
 library(usedthese)
-library(xts)
+library(xts, exclude = "first")
 
 conflict_scout()
 
@@ -24,6 +25,7 @@ tribble(~group, ~a1, ~a2, ~b1,
   mutate(first_a1 = first(a1),
          last_a2 = last(a2))
 
-## -----------------------------------------------------------------------------
+## ----warning=FALSE------------------------------------------------------------
+
 used_here()
 
