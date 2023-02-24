@@ -6,6 +6,7 @@ knitr::opts_chunk$set(
 
 ## ----setup--------------------------------------------------------------------
 options(tidyverse.quiet = TRUE)
+options(xts.warn_dplyr_breaks_lag = FALSE)
 library(conflicted)
 library(dplyr)
 library(tibble)
