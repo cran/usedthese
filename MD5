@@ -1,10 +1,10 @@
-b93a54a52549376d1c36849c705d87ae *DESCRIPTION
+a71e7efb300fe8995da4c5374830e6c1 *DESCRIPTION
 692964f956057f6de0f8eb7899ad4853 *LICENSE
 8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-d416da2627f72b013554d37a8181a2ce *NEWS.md
+e41d97e08bd45de0221f47481f3e3174 *NEWS.md
 60fe3b22bcef0137de3f766b28af7335 *R/globals.R
 f412f4153f5a3b84f76325a08561fa1c *R/used_here.R
-006e1c58bb8a5ce59d57bc0b22337fac *R/used_there.R
+78fe0d7868db90bf82bcb3dedddc5a84 *R/used_there.R
 d7a54580ba6b0c63cf4b2782267b6f43 *R/usedthese-package.R
 bd8ee469bdcb037535a67212c6c96323 *README.md
 eb7e7c61813d4461ec8360128fbbd9e9 *build/vignette.rds
@@ -12,7 +12,7 @@ eb7e7c61813d4461ec8360128fbbd9e9 *build/vignette.rds
 9714b11fe56b700e31bb0ce40cf8f6b1 *inst/WORDLIST
 9e354be6a5666851f07715559c3821f9 *inst/doc/multipage.R
 b111e43a8037b999c1a2e8551484d51a *inst/doc/multipage.Rmd
-1f63812eea6e3211ddb9d394437d6025 *inst/doc/multipage.html
+29876c7bb2cd5f1011bb8408150832a0 *inst/doc/multipage.html
 82b0c22f5e0d43f46e687a82c23826cb *inst/doc/usedthese.R
 64c148c78882250951bde5397e953b6e *inst/doc/usedthese.Rmd
 26546bf6536cdb9927d6a7f4cb99768e *inst/doc/usedthese.html
@@ -31,7 +31,7 @@ b57f5e4e61a5854ed6d77405a154da98 *man/used_here.Rd
 0622a97a2aaa3c342f09636052c2d7f5 *tests/spelling.R
 db802bfeee4cede5ddb2ccee61727ac1 *tests/testthat.R
 6726b37b943f5b7d051dbdc718d4f129 *tests/testthat/test-used_here.R
-af7d0e14f42d9da25b0cc4a524a901c0 *tests/testthat/test-used_there.R
+b28e4917b67a1f2f65cf4c3e4bab006d *tests/testthat/test-used_there.R
 db771fa277b96c86fb38fdc99e5ace98 *tests/testthat/testthat-problems.rds
 b111e43a8037b999c1a2e8551484d51a *vignettes/multipage.Rmd
 64c148c78882250951bde5397e953b6e *vignettes/usedthese.Rmd
