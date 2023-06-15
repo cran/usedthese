@@ -340,28 +340,28 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usedthese)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(usedthese)</span></code></pre></div>
 <p>Having added <code>used_here()</code> to several of your Quarto
 website pages, you may want to make an overall site analysis of your
 package and function usage. <code>used_there()</code> scrapes and
 consolidates the tables into a <code>tibble</code> ready for
 analysis:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">used_there</span>(<span class="st">&quot;https://www.quantumjitter.com/project/&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1,391 × 4</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    Package Function         n url                                           </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;                                         </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 Qtools  GOFTest          1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 Quandl  Quandl           3 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 SPARQL  SPARQL           1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 base    as.character     1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 base    c                5 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 base    library         14 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 base    list             1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 base    mean             1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 base    options          1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 base    set.seed         1 https://www.quantumjitter.com/project/monkeys/</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 1,381 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">used_there</span>(<span class="st">&quot;https://www.quantumjitter.com/project/&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1,526 × 4</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt;    Package Function          n url                                         </span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;                                       </span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;  1 base    as.character      7 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;  2 base    as.data.frame     1 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;  3 base    assign            5 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;  4 base    c                27 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;  5 base    library          21 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;  6 base    list              7 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;  7 base    names             1 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt;  8 base    readRDS           1 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt;  9 base    round             1 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; 10 base    seq               1 https://www.quantumjitter.com/project/bayes/</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 1,516 more rows</span></span></code></pre></div>
 <p><a href="https://www.quantumjitter.com/project/box/">Favourite
 Things</a> shows an example analysis which takes the tibble output from
 <code>used_there()</code>, augments these data with a category, and

@@ -1,3 +1,8 @@
+# usedthese 0.3.3
+
+* Fixed occasional `used_here()` warning
+* Documentation updates
+
 # usedthese 0.3.2
 
 * `used_there()` fails gracefully if Internet resource unavailable
