@@ -1,3 +1,10 @@
+# usedthese 0.4.0
+
+# usedthese 0.3.4
+
+* Spring clean
+* Default branch master to main
+
 # usedthese 0.3.3
 
 * Fixed occasional `used_here()` warning
@@ -27,7 +34,3 @@
 # usedthese 0.1.0
 
 * First submission to CRAN.
-
-# usedthese 0.0.0.9000
-
-* Added a `NEWS.md` file to track changes to the package.
