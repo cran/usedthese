@@ -12,13 +12,13 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 coverage](https://codecov.io/gh/cgoo4/usedthese/branch/main/graph/badge.svg)](https://app.codecov.io/gh/cgoo4/usedthese?branch=main)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/usedthese)](https://CRAN.R-project.org/package=usedthese)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/usedthese?color=blue)](https://cran.r-project.org/package=usedthese)
-
+[![](https://img.shields.io/badge/doi-10.32614/CRAN.package.usedthese-skyblue.svg)](https://doi.org/10.32614/CRAN.package.usedthese)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/usedthese?color=blue)](https://cran.r-project.org/package=usedthese)
 <!-- badges: end -->
 
 ## Overview
 
-usedthese is a pair of functions to summarise R package & function usage
+usedthese is a pair of functions to summarise package & function usage
 in Quarto documents consistent with knitr’s syntax highlighting:
 
 1.  `used_here()` adds a nicely-rendered summary table of usage to a
@@ -38,7 +38,7 @@ including `used_here()` in each Quarto document.
 
 `used_there()` scrapes all the tables created by `used_here()` to enable
 a [Favourite Things](https://www.quantumjitter.com/project/box/) article
-on how R packages and functions are used across the website.
+on how packages and functions are used across the website.
 
 I personally find this approach makes it easier for me to check for
 consistency of usage, acknowledge the packages I most need to keep
